@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="from https://codepen.io/lalwanivikas/details/eZxjqo">
+  <title>Calculator</title>
+  <style>body {
+  width: 500px;
+  letter-spacing: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 4% auto;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 1.8rem;
+}
+
+.calculator {
+  border-radius: 1px;
+  padding: 20px;
+  box-shadow: 0 1px 4px #0003;
+}
+
+.input {
+  height: 60px;
+  text-align: right;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  margin-right: 6px;
+  padding-top: 10px;
+  padding-right: 15px;
+  font-size: 2.5rem;
+  transition: all .2s ease-in-out;
+  overflow-x: auto;
+}
+
+.input:hover {
+  border: 1px solid #bbb;
+  box-shadow: inset 0 1px 4px #0003;
+}
+
+.operators {
+  justify-content: space-between;
+  display: flex;
+}
+
+.operators div {
+  width: 85px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ddd;
+  border: 1px solid #bbb;
+  border-radius: 1px;
+  margin: 20px 4px 10px 0;
+  padding: 8px;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+  display: inline-block;
+}
+
+.operators div:hover {
+  background-color: #ddd;
+  border-color: #aaa;
+  box-shadow: 0 1px 4px #0003;
+}
+
+.operators div:active {
+  font-weight: bold;
+}
+
+.leftPanel {
+  display: inline-block;
+}
+
+.numbers div {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  margin: 10px 4px 10px 0;
+  padding: 10px;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+  display: inline-block;
+}
+
+.numbers div:hover {
+  background-color: #f1f1f1;
+  border-color: #bbb;
+  box-shadow: 0 1px 4px #0003;
+}
+
+.numbers div:active {
+  font-weight: bold;
+}
+
+div.equal {
+  width: 17%;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4d90fe;
+  border: 1px solid #3079ed;
+  border-radius: 1px;
+  margin: 10px 0;
+  padding: 127px 10px;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+}
+
+div.equal:hover {
+  background-color: #307cf9;
+  border-color: #1857bb;
+  box-shadow: 0 1px 4px #0003;
+}
+
+div.equal:active {
+  font-weight: bold;
+}
+
+</style>
+  
+
+  <body>
+    <div class="calculator">
+      <div class="input" id="input"></div>
+      <div class="buttons">
+        <div class="operators">
+          <div>+</div>
+          <div>-</div>
+          <div>&times;</div>
+          <div>&divide;</div>
+        </div>
+        <div class="leftPanel">
+          <div class="numbers">
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+          </div>
+          <div class="numbers">
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+          <div class="numbers">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <div class="numbers">
+            <div>0</div>
+            <div>.</div>
+            <div id="clear">C</div>
+          </div>
+        </div>
+        <div class="equal" id="result">=</div>
+      </div>
+    </div>
+    <script src="/index.40ea770f.js" defer=""></script>
+  </body>
+
+</html>

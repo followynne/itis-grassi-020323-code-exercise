@@ -2,8 +2,9 @@
   "name": "itis-grassi-workspace",
   "version": "1.0.0",
   "description": "ITIS Grassi 03.02.2022 workspace exercise",
-  "main": "index.js",
   "scripts": {
+    "build": "parcel build index.html --dist-dir dist --public-url ./",
+    "start": "parcel index.html --dist-dir dev --https",
     "test": "npx jest --watch"
   },
   "author": "Matteo Gregoricchio",
