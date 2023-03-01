@@ -39,8 +39,6 @@ END:
 - you'll see lots of error in the typescript file but the build isn't failing - that's fine!
 - commit all changes
 
-# step 1.5 (optional) - move the CSS to a separate SCSS file and import it into index.html
-
 # step 2 - add some tests
 
 ## step 2.1
@@ -115,3 +113,13 @@ Let's move the input.innerHtml update as a shared last operation and leave only 
 Into operators.ts we can extract an else condition as a safe-guard precondition, to simplify the nested conditions.
 
 As a result, we have a simplified codebase, cleaned up and with easier condition nesting, ready to be improved!
+
+# step 5 (optional) - move the CSS to a separate SCSS file and import it into index.html
+
+You need to create a .scss file and move your css into it.
+
+When you run parcel, it will install all the required packages!
+
+In the html, import it as 
+
+`<link rel="stylesheet" type="text/css" href="your/path/to/yourfile.scss"/>`
