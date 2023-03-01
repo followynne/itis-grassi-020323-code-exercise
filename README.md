@@ -82,3 +82,15 @@ We don't need to check **_how_** we make the final operation text, we only check
 The rest of the tests are left to the student as a (difficult) exercise ;)
 
 # step 3
+
+Let's go little by little - first, let's break the main index.ts file and apply a couple of safety rules.
+Check branch feat/step3-create-safer-modules, commit https://github.com/followynne/itis-grassi-020323-code-exercise/commit/33d10a8deb784f592e1199883b493664d96f7f23
+
+- we create separate functions and files based on the operations we do 
+- we change some var with const/let
+- we move elements search inside the functions, to keep modules more isolated 
+- we add some safe-guards (do you see the `if (!someVariable) return` ?)
+
+Do you see the results? Do you see how the isolation works and how we can better understand the algorithms behind?
+
+# step 4
