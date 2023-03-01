@@ -4,8 +4,11 @@
   "description": "ITIS Grassi 03.02.2022 workspace exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest --watch"
   },
   "author": "Matteo Gregoricchio",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
 }
