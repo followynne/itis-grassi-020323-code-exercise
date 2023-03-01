@@ -39,7 +39,7 @@ for (var i = 0; i < number.length; i++) {
   });
 }
 
-// adding click handlers to number buttons
+// adding click handlers to operators buttons
 for (var i = 0; i < operator.length; i++) {
   operator[i].addEventListener('click', function (e) {
     // storing current input string and its last character in variables - used later
