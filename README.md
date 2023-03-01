@@ -94,3 +94,24 @@ Check branch feat/step3-create-safer-modules, commit https://github.com/followyn
 Do you see the results? Do you see how the isolation works and how we can better understand the algorithms behind?
 
 # step 4
+
+Let's refactor something now!
+
+First thing we can easily notice is, inside the function that calculate the result, is the 4 operations execution. All 4 share the same concept: 
+
+- search for the operation symbol index in an array with all operators
+- if found, first modify the string[] numbers by removing the 2 numbers next to the operator and adding into it the result from num1 (operator) num2
+- then, remove the operation symbol just applied
+- search again until operation is not found anymore
+
+We can extract a common helper function, where we pass the 2 arrays and the operator and complete the same activity for all 4.
+
+Then we can extract a small function, that will extract the 2 arrays from the input string.
+
+Now we can look at numbers.ts - since we have a better readability, we notice that the if condition can be simplified.
+
+Let's move the input.innerHtml update as a shared last operation and leave only an if condition, if resultDisplayed is true and last char is not an operation.
+
+Into operators.ts we can extract an else condition as a safe-guard precondition, to simplify the nested conditions.
+
+As a result, we have a simplified codebase, cleaned up and with easier condition nesting, ready to be improved!
