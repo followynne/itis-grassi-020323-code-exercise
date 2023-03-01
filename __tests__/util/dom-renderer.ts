@@ -12,12 +12,4 @@ export const renderAppDom = async () => {
 
   document.body.innerHTML = dom.window.document.body.innerHTML;
   window.userEventLibApi = user;
-
-  try {
-    await import('../../scripts/index');
-  } catch (err) {
-    console.warn("main file import failed miserably:")
-    console.error(err);
-    throw err;
-  }
 };
