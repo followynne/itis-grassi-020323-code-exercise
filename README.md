@@ -57,3 +57,28 @@ This will start Jest in watch mode.
 Place your tests inside the folder __tests__, with the extension spec.ts.
 
 # step 2.2
+
+Let's add a real test. What do we start with?
+
+I have a calculator - let's check that, if I click a number or the point, the item gets appended to the main operation text.
+
+Open this commit and follow along:  
+https://github.com/followynne/itis-grassi-020323-code-exercise/commit/434cb052dea6ad2574239ab53d0a0a8a852e9bab
+
+In index.html, we added a title, one per each button we want to test, to be able to get them inside our test.  
+We also added a role and an aria-label for the same purpose ((info)[https://testing-library.com/docs/queries/about#priority])
+
+In index.spec.ts, we create a test for all the expected buttons titles (it.each execute the test 1 time per each array item):
+
+- as a first thing, we set the operation text to "1"
+- we search for the button in the DOM, then we simulate a click by the user (`await user.click(...)`
+- expect(...) => this helper function from Jest lets us check our assertion, which is "after a button click, the operation text should 1 + the clicked number button"
+
+That's the whole concept behind testing!  
+I have users, I know users do operations => I simulate their usage and check that the final result works as expected.
+
+We don't need to check **_how_** we make the final operation text, we only check **_the result_**!
+
+The rest of the tests are left to the student as a (difficult) exercise ;)
+
+# step 3
