@@ -1,9 +1,12 @@
-var input = document.getElementById('input'), // input/output button
-  number = document.querySelectorAll('.numbers div'), // number buttons
-  operator = document.querySelectorAll('.operators div'), // operator buttons
+import pippo from './modules/operations';
+
+var input = document.getElementById('input') as HTMLDivElement, // input/output button
+  number = document.querySelectorAll<HTMLDivElement>('.numbers div'), // number buttons
+  operator = document.querySelectorAll<HTMLDivElement>('.operators div'), // operator buttons
   result = document.getElementById('result'), // equal button
   clear = document.getElementById('clear'), // clear button
-  resultDisplayed = false; // flag to keep an eye on what output is displayed
+  resultDisplayed = false, // flag to keep an eye on what output is displayed
+  p = pippo;
 
 // adding click handlers to number buttons
 for (var i = 0; i < number.length; i++) {
@@ -14,7 +17,7 @@ for (var i = 0; i < number.length; i++) {
 
     // if result is not diplayed, just keep adding
     if (resultDisplayed === false) {
-      input.innerHTML += e.target.innerHTML;
+      input.innerHTML += (e.target as HTMLDivElement).innerHTML;
     } else if (
       (resultDisplayed === true && lastChar === '+') ||
       lastChar === '-' ||
@@ -24,13 +27,14 @@ for (var i = 0; i < number.length; i++) {
       // if result is currently displayed and user pressed an operator
       // we need to keep on adding to the string for next operation
       resultDisplayed = false;
-      input.innerHTML += e.target.innerHTML;
+      input.innerHTML += (e.target as HTMLDivElement).innerHTML;
     } else {
       // if result is currently displayed and user pressed a number
       // we need clear the input string and add the new input to start the new opration
       resultDisplayed = false;
       input.innerHTML = '';
-      input.innerHTML += e.target.innerHTML;
+      console.log(e.target);
+      input.innerHTML += (e.target as HTMLDivElement).innerHTML;
     }
   });
 }
@@ -51,14 +55,14 @@ for (var i = 0; i < operator.length; i++) {
     ) {
       var newString =
         currentString.substring(0, currentString.length - 1) +
-        e.target.innerHTML;
+        (e.target as HTMLDivElement).innerHTML;
       input.innerHTML = newString;
     } else if (currentString.length == 0) {
       // if first key pressed is an opearator, don't do anything
       console.log('enter a number first');
     } else {
       // else just add the operator pressed to the input
-      input.innerHTML += e.target.innerHTML;
+      input.innerHTML += (e.target as HTMLDivElement).innerHTML;
     }
   });
 }
@@ -87,21 +91,39 @@ result.addEventListener('click', function () {
 
   var divide = operators.indexOf('÷');
   while (divide != -1) {
-    numbers.splice(divide, 2, numbers[divide] / numbers[divide + 1]);
+    numbers.splice(
+      divide,
+      2,
+      (
+        parseFloat(numbers[divide]) / parseFloat(numbers[divide + 1])
+      ).toString(),
+    );
     operators.splice(divide, 1);
     divide = operators.indexOf('÷');
   }
 
   var multiply = operators.indexOf('×');
   while (multiply != -1) {
-    numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
+    numbers.splice(
+      multiply,
+      2,
+      (
+        parseFloat(numbers[multiply]) * parseFloat(numbers[multiply + 1])
+      ).toString(),
+    );
     operators.splice(multiply, 1);
     multiply = operators.indexOf('×');
   }
 
   var subtract = operators.indexOf('-');
   while (subtract != -1) {
-    numbers.splice(subtract, 2, numbers[subtract] - numbers[subtract + 1]);
+    numbers.splice(
+      subtract,
+      2,
+      (
+        parseFloat(numbers[subtract]) - parseFloat(numbers[subtract + 1])
+      ).toString(),
+    );
     operators.splice(subtract, 1);
     subtract = operators.indexOf('-');
   }
@@ -112,7 +134,7 @@ result.addEventListener('click', function () {
     numbers.splice(
       add,
       2,
-      parseFloat(numbers[add]) + parseFloat(numbers[add + 1]),
+      parseFloat(numbers[add]) + parseFloat(numbers[add + 1]).toString(),
     );
     operators.splice(add, 1);
     add = operators.indexOf('+');

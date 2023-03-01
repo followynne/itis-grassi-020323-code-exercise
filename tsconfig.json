@@ -5,7 +5,7 @@
     "removeComments": false,
     "sourceMap": true,
     "target": "es5",
-    // "typeRoots": ["./__tests__/util/types.ts", "./node_modules/@types/"]
+    "typeRoots": ["./__tests__/util/types.ts", "./node_modules/@types/"]
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules"]
