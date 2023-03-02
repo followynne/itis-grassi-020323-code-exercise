@@ -1,9 +1,13 @@
 import { AdmittedOperations } from '../types';
 import { applyOperation } from './operations';
 
-export const calculateResult = (resultDisplayed: boolean) => {
+export const calculateResult = () => {
   const input = document.getElementById('input') as HTMLDivElement;
-  if (!input) return;
+  const resultDisplayed = document.getElementById(
+    'is-result-displayed',
+  ) as HTMLInputElement;
+
+  if (!input || !resultDisplayed) return;
 
   const { numbers, operators } = divideNumbersAndOperationsInInput(input);
 
@@ -37,6 +41,7 @@ export const calculateResult = (resultDisplayed: boolean) => {
   );
 
   input.innerHTML = plus[0][0]; // displaying the output
+  resultDisplayed.value = 'true';
 };
 
 const divideNumbersAndOperationsInInput = (input: HTMLElement) => {

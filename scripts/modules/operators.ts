@@ -33,13 +33,8 @@ export const onOperatorButtonClick = (e: MouseEvent) => {
 };
 
 export const onClearButtonClick = () => {
-  const clear = document.getElementById('clear'); // clear button
-
-  if (!clear) return;
   // clearing the input on press of clear
-  clear.addEventListener('click', function () {
-    const input = document.getElementById('input') as HTMLDivElement;
-    if (!input) return;
-    input.innerHTML = '';
-  });
+  const input = document.getElementById('input') as HTMLDivElement;
+  if (!input) return;
+  input.innerHTML = '';
 };
