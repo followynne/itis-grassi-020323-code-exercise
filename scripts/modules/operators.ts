@@ -5,7 +5,7 @@ export const onOperatorButtonClick = (e: MouseEvent) => {
   if (!input) return;
 
   // storing current input string and its last character in variables - used later
-  const currentOperation = input.innerHTML;
+  const currentOperation = input.innerHTML.trim();
   const operationLastChar = currentOperation[currentOperation.length - 1];
 
   if (currentOperation.length == 0) {

@@ -1,7 +1,7 @@
 import { AdmittedOperations } from '../types';
 
 export const onNumberButtonClick = (
-  e: MouseEvent
+  e: MouseEvent,
   //isResultDisplayed: boolean,
 ) => {
   const input = document.getElementById('input') as HTMLDivElement;
@@ -13,7 +13,7 @@ export const onNumberButtonClick = (
   if (!input || !resultDisplayed) return;
 
   // storing current input string and its last character in variables - used later
-  const currentOperation = input.innerHTML;
+  const currentOperation = input.innerHTML.trim();
   const operationLastChar = currentOperation[currentOperation.length - 1];
 
   // if result is currently displayed and user pressed a number
@@ -30,6 +30,6 @@ export const onNumberButtonClick = (
     console.log(e.target);
   }
 
-  input.innerHTML += (e.target as HTMLDivElement).innerHTML;
+  input.innerHTML += (e.target as HTMLDivElement).innerHTML.trim();
   resultDisplayed.value = 'false';
 };

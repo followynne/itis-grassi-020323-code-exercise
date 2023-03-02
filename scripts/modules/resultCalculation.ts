@@ -46,7 +46,7 @@ export const calculateResult = () => {
 
 const divideNumbersAndOperationsInInput = (input: HTMLElement) => {
   // this is the string that we will be processing eg. -10+26+33-56*34/23
-  const inputString = input.innerHTML;
+  const inputString = input.innerHTML.trim();
 
   // forming an array of numbers. eg for above string it will be: numbers = ["10", "26", "33", "56", "34", "23"]
   const numbers = inputString.split(/\+|\-|\×|\÷/g);
