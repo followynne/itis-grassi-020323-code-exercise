@@ -112,6 +112,8 @@ Let's move the input.innerHtml update as a shared last operation and leave only 
 
 Into operators.ts we can extract an else condition as a safe-guard precondition, to simplify the nested conditions.
 
+Last but not least, we remove the global variable isResultDisplayed and we replace it with an hidden input, to prevent any global variables usage.
+
 As a result, we have a simplified codebase, cleaned up and with easier condition nesting, ready to be improved!
 
 # step 5 (optional) - move the CSS to a separate SCSS file and import it into index.html
